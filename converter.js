@@ -20,6 +20,7 @@ exports.urlToMp3 = function(url) {
                     video.fnExtractSoundToMP3(('public/' + title + '_youtube-music.xyz.mp3')
                         .replace('(', '')
                         .replace(')', '')
+                        .replace('|', '')
                         .replace(/\s/g, '_'), function (error, file) {
                         if (!error){
                             console.log('Audio file: ' + file);
