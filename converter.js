@@ -21,6 +21,7 @@ exports.urlToMp3 = function(url) {
                         .replace('(', '')
                         .replace(')', '')
                         .replace('|', '')
+                        .replace('|', '')
                         .replace(/\s/g, '_'), function (error, file) {
                         if (!error){
                             console.log('Audio file: ' + file);
