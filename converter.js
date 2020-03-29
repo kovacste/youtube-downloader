@@ -20,6 +20,8 @@ exports.urlToMp3 = function(url) {
                         if (!error){
                             console.log('Audio file: ' + file);
                             resolve(file)
+                        } else {
+                            reject(error)
                         }
                     });
                 }, function (err) {
