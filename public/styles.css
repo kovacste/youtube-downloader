@@ -1,0 +1,84 @@
+.button-red {
+    background-color: #db4437;
+    border-color: #db4437;
+}
+.button-red.button-clear,
+.button-red.button-outline {
+    background-color: transparent;
+    color: #db4437;
+}
+.button-red.button-clear {
+    border-color: transparent;
+}
+
+form {
+    margin-top: 70px;
+    margin-left: 15px;
+}
+
+.navigation {
+    background: #f4f5f6;
+    border-bottom: .1rem solid #d1d1d1;
+    display: block;
+    height: 5.2rem;
+    left: 0;
+    max-width: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-link {
+    color: #db4437;
+    font-size: 24px;
+    cursor: pointer;
+    height: 100%;
+    display: inline-block;
+    margin: 5px 5px 5px 80px;
+    vertical-align: top;
+}
+
+.icon {
+    vertical-align: middle;
+}
+
+header {
+    margin-top:100px;
+}
+
+.logo {
+    margin-top: 10px;
+    margin-right: 100px;
+    display: inline-block;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.spin {
+    animation-name: spin;
+    animation-duration: 700ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.clear-icon {
+    margin-left: 2px;
+    width: 45px;
+    padding: 0;
+    position: absolute;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.container {
+    width: 40%;
+}

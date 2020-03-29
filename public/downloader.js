@@ -1,5 +1,5 @@
 function downloadToMp3() {
-    console.log('get it ')
+    beforeConvert();
     let url = document.getElementById('url').value;
     fetch('/getYTMusic', {
         method: 'POST',
@@ -11,9 +11,25 @@ function downloadToMp3() {
     }).then((response) => {
         return response.json();
     }).then(json => {
-        console.log(json)
-        //window.open(json.url.split('/')[1], '_self');
-        document.getElementById('dl-link').href = json.url.split('/')[1];
-        document.getElementById('dl-link').style = 'display: inline;';
+        afterFinished(json);
     })
+}
+
+function beforeConvert() {
+    document.getElementById('spinner').style = 'display: inline-block;';
+    document.getElementById('spinner').classList.add('spin');
+    document.getElementById('convert-text').style = 'display: none;';
+    document.getElementById('dl-link').style = 'display: none;';
+}
+
+function afterFinished(json) {
+    document.getElementById('spinner').style = 'display: none;';
+    document.getElementById('convert-text').style = 'display: inline-block;';
+    document.getElementById('dl-link').href = json.url.split('/')[1];
+    document.getElementById('dl-link').download = json.url.split('/')[1];
+    document.getElementById('dl-link').style = 'display: inline-block;';
+}
+
+function clear() {
+    document.getElementById('url').value = '';
 }

@@ -4,19 +4,23 @@ exports.urlToMp3 = function(url) {
         const fs = require('fs');
         const youtubedl = require('youtube-dl');
         var ffmpeg = require('ffmpeg');
-            
+        var title = '';
         const video = youtubedl(url, ['--format=18'], {cwd: __dirname})
         
         video.on('info', function(info) {
-            console.log('download started')
+            console.log('download started', info.fulltitle)
+            title = info.fulltitle;
         })
         
         video.on('end', function () {
             try {
-                var process = new ffmpeg('myvideo.mp4');
+                var process = new ffmpeg('video.mp4');
                 process.then(function (video) {
                     
-                    video.fnExtractSoundToMP3('public/myvideo.mp3', function (error, file) {
+                    video.fnExtractSoundToMP3(('public/' + title + '_youtube-download.xyz.mp3')
+                        .replace('(', '')
+                        .replace(')', '')
+                        .replace(/\s/g, '_'), function (error, file) {
                         if (!error){
                             console.log('Audio file: ' + file);
                             resolve(file)
@@ -34,6 +38,6 @@ exports.urlToMp3 = function(url) {
             }
         })
         
-        video.pipe(fs.createWriteStream('myvideo.mp4'));    
+        video.pipe(fs.createWriteStream('video.mp4'));
     })
 }
