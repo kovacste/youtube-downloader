@@ -82,3 +82,13 @@ header {
 .container {
     width: 40%;
 }
+
+footer {
+    text-align: center;
+}
+
+.footer-link {
+    color: #db4437;
+    margin: 5px;
+    cursor: pointer;
+}

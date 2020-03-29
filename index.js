@@ -12,6 +12,11 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/index.html')))
 
+app.get('/about', (req, res) => res.sendFile(path.join(__dirname+'/about.html')));
+app.get('/contact', (req, res) => res.sendFile(path.join(__dirname+'/contact.html')));
+app.get('/termsofservices', (req, res) => res.sendFile(path.join(__dirname+'/termsofservices.html')));
+app.get('/privacypolicy', (req, res) => res.sendFile(path.join(__dirname+'/privacypolicy.html')));
+
 
 app.post('/getYTMusic', (req, res) => {
     urlToMp3.urlToMp3(req.body.url).then(fileName => {
