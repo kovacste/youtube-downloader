@@ -17,7 +17,7 @@ exports.urlToMp3 = function(url) {
                 var process = new ffmpeg('video.mp4');
                 process.then(function (video) {
                     
-                    video.fnExtractSoundToMP3(('public/' + title + '_youtube-download.xyz.mp3')
+                    video.fnExtractSoundToMP3(('public/' + title + '_youtube-music.xyz.mp3')
                         .replace('(', '')
                         .replace(')', '')
                         .replace(/\s/g, '_'), function (error, file) {
