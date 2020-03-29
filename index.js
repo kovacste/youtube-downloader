@@ -4,7 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const urlToMp3 = require('./converter.js');
 
-const port = 80
+const port = 3000
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
