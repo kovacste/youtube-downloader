@@ -13,7 +13,6 @@
 
 form {
     margin-top: 70px;
-    margin-left: 15px;
 }
 
 .navigation {
@@ -84,7 +83,9 @@ header {
 }
 
 footer {
+    padding: 40px;
     text-align: center;
+    background: #f4f5f6;
 }
 
 .footer-link {
