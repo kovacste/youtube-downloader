@@ -1,13 +1,14 @@
-function downloadToMp3() {
+function convert() {
     beforeConvert();
     let url = document.getElementById('url').value;
+    let format = document.getElementById('format').value;
     fetch('/getYTMusic', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({url: url})
+        body: JSON.stringify({url: url, format: format})
     }).then((response) => {
         return response.json();
     }).then(json => {

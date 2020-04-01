@@ -44,7 +44,12 @@
                                 <label for="url"> Paste a valid Youtube video URL </label>
                                 <input id="url" placeholder="Video url" type="text" />
                                 <button onclick="clear()" class="button-outline button-red material-icons clear-icon"> clear </button>
-                                <button id="convert-button" class="button button-outline button-red" type="button" onclick="downloadToMp3()" >
+                                <label for="url"> Select file format </label>
+                                <select id="format">
+                                    <option value="mp3"> mp3 </option>
+                                    <option value="mp4"> mp4 </option>
+                                </select>
+                                <button id="convert-button" class="button button-outline button-red" type="button" onclick="convert()" >
                                     <i style="display: none;" id="spinner" class="material-icons icon">
                                         cached
                                     </i>
@@ -65,16 +70,16 @@
                         </form>
 
                 <p>
-                    Youtube-Music is a web application that let's you convert Youtube videos to mp3 files.
+                    Youtube-Music is a web application that let's you convert to mp3 or mp4 and download Youtube videos.
                 </p>
                 <p>
-                    Our service is free you can uset it unlimited times and it does not require registration. By using
+                    Our service is free you can use it unlimited times and it does not require registration. By using
                     our service you are accepting our terms of service.
                 </p>
                 <h2> How to use? </h2>
                 <h4>  Step 1 </h4>
                 <p>
-                    Paste the url the video you want to convert in the input field above.
+                    Paste the url the video you want to convert in the input field above and select the disered file format.
                 </p>
                 <h4>  Step 2</h4>
                 <p>

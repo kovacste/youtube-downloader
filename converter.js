@@ -43,3 +43,35 @@ exports.urlToMp3 = function(url) {
         video.pipe(fs.createWriteStream('video.mp4'));
     })
 }
+
+exports.urlToMp4 = function(url) {
+    return new Promise((resolve, reject) => {
+
+        const fs = require('fs');
+        const youtubedl = require('youtube-dl');
+        var title = '';
+        const video = youtubedl(url, ['--format=18'], {cwd: __dirname})
+
+
+        video.on('info', function(info) {
+            console.log('download started', info.fulltitle);
+            title = info.fulltitle.replace('(', '')
+                                .replace(')', '')
+                                .replace('|', '')
+                                .replace('|', '')
+                                .replace(/\s/g, '_') + '.mp4';
+        })
+
+        video.on('end', function() {
+            fs.rename('public/myvideo.mp4', 'public/' + title, function(err) {
+                if ( err ) reject(err)
+                console.log('resolve with',  'public/' + title)
+                resolve( 'public/' + title)
+            });
+        })
+
+        video.pipe(fs.createWriteStream('public/myvideo.mp4'));
+    })
+}
+
+
