@@ -15,8 +15,11 @@
   "license": "CC0-1.0",
   "dependencies": {
     "compression": "^1.7.4",
+    "ddos": "^0.2.1",
     "express": "^4.17.1",
     "ffmpeg": "0.0.4",
+    "node-cron": "^2.0.3",
+    "nosql": "^6.1.0",
     "youtube-dl": "^3.0.2"
   }
 }
