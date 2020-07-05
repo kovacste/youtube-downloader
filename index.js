@@ -7,7 +7,7 @@ const removeJob = require('./fileRemoveJob')
 var compression = require('compression');
 
 var Ddos = require('ddos');
-var ddos = new Ddos({burst:10, limit:15})
+//var ddos = new Ddos({burst:10, limit:15})
 
 const port = 3000;
 
@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(compression());
-app.use(ddos.express);
+//app.use(ddos.express);
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/index.html')))
 app.get('/about', (req, res) => res.sendFile(path.join(__dirname+'/about.html')));
