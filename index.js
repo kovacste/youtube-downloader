@@ -12,7 +12,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(compression());
 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/index.html')))
+app.get('/', (req, res) => {
+    console.trace();
+    return res.sendFile(path.join(__dirname+'/index.html'))
+})
+
 app.get('/about', (req, res) => res.sendFile(path.join(__dirname+'/about.html')));
 app.get('/contact', (req, res) => res.sendFile(path.join(__dirname+'/contact.html')));
 app.get('/termsofservices', (req, res) => res.sendFile(path.join(__dirname+'/termsofservices.html')));
