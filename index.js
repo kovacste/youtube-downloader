@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const urlToMp3 = require('./converter.js');
 var compression = require('compression');
 
-const port = 3000;
+const port = 80;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -14,7 +14,7 @@ app.use(compression());
 
 app.get('/', (req, res) => {
     console.trace();
-    return res.sendFile(path.join(__dirname+'/index.html'))
+    return res.sendFile(path.join(__dirname+'/kornelindex.html'))
 })
 
 app.get('/about', (req, res) => res.sendFile(path.join(__dirname+'/about.html')));
