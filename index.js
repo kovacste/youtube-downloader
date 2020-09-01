@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const urlToMp3 = require('./converter.js');
 var compression = require('compression');
 
-const port = 80;
+const port = 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
